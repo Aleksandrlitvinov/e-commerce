@@ -1,0 +1,30 @@
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .label {
+    color: var(--color-dark-700);
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-m);
+  }
+
+  &.checked {
+    .label {
+      color: var(--color-dark-900);
+      font-size: 14px;
+      font-family: "Open Sans", sans-serif;
+      font-weight: var(--font-weight-regular);
+      line-height: var(--line-height-m);
+    }
+  }
+
+  .checkboxIcon {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+  }
+}
+
