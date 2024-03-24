@@ -6,11 +6,12 @@ import clsx from 'clsx'
 import s from './checkbox.module.scss'
 
 type PropsType = {
-  label: string
+  checked?: boolean
+  label?: string
 }
 export const Checkbox = (props: PropsType) => {
   const [isChecked, setChecked] = useState<boolean>(false)
-  const { label } = props
+  const { checked = isChecked, label } = props
 
   const onCheckedHandler = () => {
     setChecked(!isChecked)
@@ -22,7 +23,7 @@ export const Checkbox = (props: PropsType) => {
   return (
     <div className={classNames.checkbox}>
       <div className={s.checkboxIcon} onClick={onCheckedHandler}>
-        {isChecked ? <CheckedIcon /> : <UncheckedIcon />}
+        {checked ? <CheckedIcon /> : <UncheckedIcon />}
       </div>
       <p className={s.label}>{label}</p>
     </div>
