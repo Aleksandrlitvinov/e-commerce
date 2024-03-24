@@ -9,7 +9,7 @@ type PropsType<T extends ElementType = 'button'> = {
   children: ReactNode
   className?: string
   size: 'large' | 'medium' | 'small'
-  variant: 'link' | 'primary' | 'secondary' | 'tertiary'
+  variant: 'outline' | 'primary' | 'secondary' | 'tertiary'
 }
 export const Button = <T extends ElementType = 'button'>(
   props: PropsType<T> & Omit<ComponentPropsWithoutRef<T>, keyof PropsType>

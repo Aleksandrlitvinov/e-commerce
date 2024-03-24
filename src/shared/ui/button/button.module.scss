@@ -9,29 +9,72 @@
   justify-content: center;
   gap: 6px;
 
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-m);
+  letter-spacing: 0;
+  text-transform: none;
+
   box-sizing: border-box;
   border-radius: 12px;
+
+  transition: 0.3s ease-in-out;
 }
 
 .primary {
   @include button;
 
-  border: 2px solid #46760a;
-  color: #fff;
-  font-size: 15px;
-  font-style: normal;
-  font-family: "Poppins",sans-serif;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: 0;
-  text-transform: none;
-  background-color: #6a983c;
+  border: 2px solid var(--color-success-700);
+  color: var(--color-light-900);
+  background-color: var(--color-success-900);
+
+  &:hover {
+    background-color: transparent;
+    border: 2px solid var(--color-success-900);
+    color: var(--color-dark-900);
+
+    div > svg > path {
+      stroke: var(--color-success-900);
+      transition: 0.3s ease-in-out;
+    }
+  }
 }
 
-.large {
-  padding: 1.125em 3em;
-  width: 100%;
-  max-width: 148px;
+.secondary {
+  @include button;
+  background-color: transparent;
+  border: 2px solid var(--color-success-900);
+  color: var(--color-dark-900);
+
+  &:hover {
+    border: 2px solid var(--color-success-700);
+    color: var(--color-light-900);
+    background-color: var(--color-success-900);
+  }
+}
+
+.tertiary {
+  @include button;
+
+  background-color: var(--color-light-300);
+  border: 2px solid var(--color-light-300);
+
+  &:hover {
+    background-color: var(--color-light-900);
+    border: 2px solid var(--color-light-900);
+  }
+}
+
+.outline {
+  @include button;
+
+  background-color: var(--color-light-900);
+  border: 2px solid var(--color-light-900);
+
+  &:hover {
+    background-color: var(--color-light-300);
+    border: 2px solid var(--color-light-300);
+  }
 }
 
 .medium {
@@ -40,4 +83,8 @@
 
 .small {
   padding: 0.75em;
+}
+
+.large {
+  padding: 1.125em 3em;
 }
