@@ -20,7 +20,7 @@ export const Input = forwardRef<HTMLInputElement, PropsType>((props, ref) => {
   }
 
   return (
-    <div>
+    <>
       {label && (
         <label className={s.label} htmlFor={label}>
           {label}
@@ -33,6 +33,6 @@ export const Input = forwardRef<HTMLInputElement, PropsType>((props, ref) => {
           {type === 'search' && <SearchIcon />}
         </div>
       </div>
-    </div>
+    </>
   )
 })

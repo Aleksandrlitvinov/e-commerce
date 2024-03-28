@@ -1,3 +1,3 @@
 export function App() {
-  return <div>Home</div>
+  return <div>App</div>
 }
