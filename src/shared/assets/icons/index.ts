@@ -1,4 +1,7 @@
 export * from './button'
 export * from './input'
 export * from './checkbox'
-export { CloseIcon } from './closeIcon'
+export { CartIcon } from './cart-icon'
+export { CloseIcon } from './close-icon'
+export { LogoIcon } from './logo-icon'
+export { UserIcon } from './user-icon'
