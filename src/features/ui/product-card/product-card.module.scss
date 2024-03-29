@@ -1,0 +1,56 @@
+.cardWrapper {
+  border-radius: 12px;
+  border: 1px solid #D1D1D1;
+  padding: 16px;
+  max-width: 270px;
+  width: 100%;
+  
+  .image{
+    position: relative;
+  }
+
+  .title{
+    color: #151515;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .description {
+    color: #575757;
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .price {
+    color: #151515;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  .oldPrice {
+    color: #A9A9A9;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-decoration: line-through;
+  }
+
+  .btn {
+    color: #FFF;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+}
