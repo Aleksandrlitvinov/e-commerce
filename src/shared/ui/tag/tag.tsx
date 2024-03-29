@@ -8,6 +8,7 @@ import s from './tag.module.scss'
 type PropsType<T extends ElementType = 'button'> = {
   as?: T
   size: 'narrow' | 'wide'
+  title: number | string
   type: 'primary' | 'secondary' | 'tertiary'
   withClose: boolean
 }
@@ -16,6 +17,7 @@ export const Tag = <T extends ElementType = 'button'>(props: PropsType<T>) => {
   const {
     as: Component = 'button',
     size = 'narrow',
+    title,
     type = 'secondary',
     withClose,
     ...rest
@@ -27,7 +29,7 @@ export const Tag = <T extends ElementType = 'button'>(props: PropsType<T>) => {
 
   return (
     <Component className={classNames.tag} {...rest}>
-      <p className={s.tagTitle}>Tag</p>
+      <p className={s.tagTitle}>{title}</p>
       {withClose && <CloseIcon />}
     </Component>
   )
