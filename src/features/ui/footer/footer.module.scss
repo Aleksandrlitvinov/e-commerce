@@ -1,0 +1,47 @@
+@mixin flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer {
+  padding: 64px 0;
+  flex-shrink: 0;
+}
+.footerTop {
+  @include flex;
+  padding-bottom: 32px;
+
+  .listItem {
+    color: var(--color-success-900);
+    font-family: 'Open Sans', sans-serif;
+    font-size: var(--font-size-s);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-s);
+    padding-bottom: 16px;
+  }
+}
+
+.tagsList {
+  @include flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-bottom: 48px;
+}
+
+.listTitle {
+  color: var(--color-dark-900);
+  font-family: 'Poppins', sans-serif;
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-semi-bold);
+  line-height: var(--line-height-s);
+  padding-bottom: 16px;
+}
+
+.copyright {
+  color: var(--C1-A, #151515);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
