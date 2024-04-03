@@ -1,49 +1,65 @@
+import { ProductType } from '@/features'
 import { PriceWithDiscount } from '@/features/ui/product-card/services'
-import { BlankCover, Button, Tag } from '@/shared'
+import { ArrowRightIcon, Button, Tag } from '@/shared'
+import clsx from 'clsx'
 
 import s from './product-card.module.scss'
 
+import { ProductAdditionalInfo } from './product-additional-info'
+
 type PropsType = {
-  description: string
-  discount?: number
-  height: string
-  imageUrl: string
-  price: number
-  rating?: number
-  title: string
-  width: string
-}
+  type: 'grid' | 'list'
+} & ProductType
 export const ProductCard = (props: PropsType) => {
-  const { description, discount, height, imageUrl, price, title, width } = props
+  const { brand, description, discountPercentage, price, stock, thumbnail, title, type } = props
 
   let currentPrice = price
 
-  if (discount) {
-    currentPrice = PriceWithDiscount(price, discount)
+  if (discountPercentage != null) {
+    currentPrice = PriceWithDiscount(price, discountPercentage)
+  }
+
+  const classNames = {
+    productCard: clsx(type === 'grid' ? s.cardWrapperGrid : s.cardWrapperList),
   }
 
   return (
-    <div className={s.cardWrapper}>
-      <div className={s.image}>
-        <BlankCover alt={description} height={height} src={imageUrl} width={width} />
-        {discount && (
-          <div style={{ left: '12px', position: 'absolute', top: '12px' }}>
-            <Tag size={'narrow'} title={`- ${discount} %`} type={'primary'} withClose={false} />
+    <div className={classNames.productCard}>
+      <div className={s.imageWrapper}>
+        <img alt={'product-image'} className={s.image} src={thumbnail} />
+        {discountPercentage && (
+          <div className={s.discount}>
+            <Tag
+              size={'narrow'}
+              title={`- ${discountPercentage} %`}
+              type={'primary'}
+              withClose={false}
+            />
           </div>
         )}
       </div>
-      <div style={{ paddingTop: '16px' }}>
-        <div style={{ paddingBottom: '16px' }}>
-          <p className={s.title}>{title}</p>
-          <p className={s.description}>{description}</p>
+      <div className={s.infoWrapper}>
+        <div className={s.mainInfo}>
+          <div>
+            <p className={s.title}>{title}</p>
+            <p className={s.description}>{description}</p>
+          </div>
+          {type === 'list' && <ProductAdditionalInfo brand={brand} stock={stock} />}
         </div>
-        <div style={{ alignItems: 'center', display: 'flex', justifyContent: 'space-between' }}>
+        <div className={s.priceInfo}>
           <div>
             <p className={s.price}>{currentPrice.toFixed(2)}$</p>
-            {discount && <div className={s.oldPrice}>{price}$</div>}
+            {discountPercentage && <div className={s.oldPrice}>{price} $</div>}
           </div>
           <Button className={s.btn} size={'small'} variant={'primary'}>
-            Buy now
+            {type === 'list' ? (
+              <div>
+                <span style={{ paddingRight: '6px' }}>Product Detail</span>
+                <ArrowRightIcon />
+              </div>
+            ) : (
+              <span>Buy now</span>
+            )}
           </Button>
         </div>
       </div>
