@@ -28,6 +28,11 @@
   color: var(--color-light-900);
   background-color: var(--color-success-900);
 
+  svg > path {
+    stroke: var(--color-light-900);
+    transition: 0.3s ease-in-out;
+  }
+
   &:hover {
     background-color: transparent;
     border: 2px solid var(--color-success-900);
@@ -46,6 +51,11 @@
   border: 2px solid var(--color-success-900);
   color: var(--color-dark-900);
 
+  svg > path {
+    stroke: var(--color-success-900);
+    transition: 0.3s ease-in-out;
+  }
+
   &:hover {
     border: 2px solid var(--color-success-700);
     color: var(--color-light-900);
@@ -58,6 +68,11 @@
 
   background-color: var(--color-light-300);
   border: 2px solid var(--color-light-300);
+
+  svg > path {
+    stroke: var(--color-dark-900);
+    transition: 0.3s ease-in-out;
+  }
 
   &:hover {
     background-color: var(--color-light-900);

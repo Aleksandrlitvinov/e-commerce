@@ -1,6 +1,5 @@
 @mixin flex {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 .footer {
@@ -9,6 +8,7 @@
 }
 .footerTop {
   @include flex;
+  justify-content: space-between;
   padding-bottom: 32px;
 
   .listItem {

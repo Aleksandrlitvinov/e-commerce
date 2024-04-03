@@ -1,0 +1,28 @@
+.data {
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+  gap: 12px;
+
+  .dataItem{
+    display: flex;
+    align-items: center;
+
+    .dataItemTitle {
+      width: 50%;
+      color: var(--color-dark-500);
+      font-family: 'Open Sans', sans-serif;
+      font-size: var(--font-size-s);
+      font-weight: var(--font-weight-regular);
+      line-height: var(--line-height-s);
+    }
+
+    .dataItemValue {
+      color: var(--color-success-900);
+      font-family: 'Open Sans', sans-serif;
+      font-size: var(--font-size-s);
+      font-weight: var(--font-weight-regular);
+      line-height: var(--line-height-s);
+    }
+  }
+}
