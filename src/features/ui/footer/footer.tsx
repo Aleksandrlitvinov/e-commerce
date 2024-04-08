@@ -1,14 +1,14 @@
+import { COPYRIGHT } from '@/features'
 import { Tag } from '@/shared'
 
 import s from './footer.module.scss'
 
 type PropsType = {
-  copyright: string
   tags: string[]
 }
 
 export const Footer = (props: PropsType) => {
-  const { copyright, tags } = props
+  const { tags } = props
 
   return (
     <footer className={s.footer}>
@@ -73,7 +73,7 @@ export const Footer = (props: PropsType) => {
         </div>
       </div>
       <div>
-        <p className={s.copyright}>{copyright}</p>
+        <p className={s.copyright}>{COPYRIGHT}</p>
       </div>
     </footer>
   )
