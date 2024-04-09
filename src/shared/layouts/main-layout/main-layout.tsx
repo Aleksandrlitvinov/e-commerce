@@ -1,13 +1,14 @@
 import { Footer, Header } from '@/features'
+import clsx from 'clsx'
 
 import s from './main-layout.module.scss'
 
-export const MainLayout = () => {
+export const MainLayout = ({ children }: any) => {
   return (
-    <div className={s.layout}>
+    <div className={clsx(s.layout, 'container')}>
       <Header />
-      <main></main>
-      <Footer copyright={'Copyright 2024'} tags={['apple', 'grape']} />
+      <main>{children}</main>
+      <Footer />
     </div>
   )
 }

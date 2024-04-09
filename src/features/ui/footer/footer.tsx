@@ -4,7 +4,7 @@ import { Tag } from '@/shared'
 import s from './footer.module.scss'
 
 type PropsType = {
-  tags: string[]
+  tags?: string[]
 }
 
 export const Footer = (props: PropsType) => {
@@ -56,7 +56,7 @@ export const Footer = (props: PropsType) => {
           </div>
         </div>
       </div>
-      <div>
+      {tags && (
         <div>
           <p className={s.listTitle}>Products Tags</p>
           <div className={s.tagsList}>
@@ -71,7 +71,7 @@ export const Footer = (props: PropsType) => {
             ))}
           </div>
         </div>
-      </div>
+      )}
       <div>
         <p className={s.copyright}>{COPYRIGHT}</p>
       </div>
