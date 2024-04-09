@@ -1,0 +1,1 @@
+export { COPYRIGHT } from './const'
