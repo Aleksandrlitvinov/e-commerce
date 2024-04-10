@@ -1,0 +1,41 @@
+.section {
+  display: flex;
+  align-items: flex-start;
+  padding: 64px 0;
+}
+
+.categories {
+  width: 25%;
+
+  .categoriesList {
+    padding-bottom: 48px;
+  }
+
+
+  .title {
+    color: var(--C1-A, #151515);
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding-bottom: 16px;
+  }
+
+  .category {
+    color: var(--C2-A, #6A983C);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+    padding-bottom: 12px;
+  }
+}
+
+.products {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+}
