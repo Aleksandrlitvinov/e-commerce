@@ -6,11 +6,12 @@ import {
   createBrowserRouter,
 } from 'react-router-dom'
 
+import { HomePage } from '@/pages'
 import { MainLayout } from '@/shared'
 
 const publicRoutes: RouteObject[] = [
   {
-    element: 'Home',
+    element: <HomePage />,
     path: '/',
   },
 ]
