@@ -5,7 +5,7 @@ export const HomePage = () => {
   const { data: categoriesList } = useGetCategoriesQuery()
   const { data: productsList } = useGetProductsQuery()
   const categories = categoriesList?.slice(0, 6)
-  const products = productsList?.products?.slice(5, 8)
+  const products = productsList?.products.slice(5, 8)
 
   return (
     <div>
