@@ -5,8 +5,8 @@ import s from './products-section.module.scss'
 
 type PropsType = {
   buttonTitle: string
-  categories: string[]
-  products: ProductType[]
+  categories?: string[]
+  products?: ProductType[]
   title: string
 }
 export const ProductsSection = (props: PropsType) => {
@@ -17,7 +17,7 @@ export const ProductsSection = (props: PropsType) => {
       <div className={s.categories}>
         <p className={s.title}>{title}</p>
         <div className={s.categoriesList}>
-          {categories.map(c => (
+          {categories?.map(c => (
             <p className={s.category} key={c}>
               {c}
             </p>
@@ -32,6 +32,7 @@ export const ProductsSection = (props: PropsType) => {
         {products?.map(p => (
           <ProductCard
             description={p.description}
+            discountPercentage={p.discountPercentage}
             id={p.id}
             key={p.id}
             price={p.price}
