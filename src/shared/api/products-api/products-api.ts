@@ -1,9 +1,11 @@
 import { baseApi } from '@/store'
 
+import { ResponseProductsType } from './types'
+
 const productsApi = baseApi.injectEndpoints({
   endpoints: builder => {
     return {
-      getProducts: builder.query<any, void>({
+      getProducts: builder.query<ResponseProductsType, void>({
         query: () => {
           return {
             method: 'GET',
@@ -11,8 +13,16 @@ const productsApi = baseApi.injectEndpoints({
           }
         },
       }),
+      getProductsByCategory: builder.query<ResponseProductsType, string>({
+        query: categoryName => {
+          return {
+            method: 'GET',
+            url: `/products/category/${categoryName}`,
+          }
+        },
+      }),
     }
   },
 })
 
-export const { useGetProductsQuery } = productsApi
+export const { useGetProductsByCategoryQuery, useGetProductsQuery } = productsApi
