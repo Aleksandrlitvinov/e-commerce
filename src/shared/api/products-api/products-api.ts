@@ -13,8 +13,16 @@ const productsApi = baseApi.injectEndpoints({
           }
         },
       }),
+      getProductsByCategory: builder.query<ResponseProductsType, string>({
+        query: categoryName => {
+          return {
+            method: 'GET',
+            url: `/products/category/${categoryName}`,
+          }
+        },
+      }),
     }
   },
 })
 
-export const { useGetProductsQuery } = productsApi
+export const { useGetProductsByCategoryQuery, useGetProductsQuery } = productsApi
